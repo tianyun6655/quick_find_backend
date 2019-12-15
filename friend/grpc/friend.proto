@@ -1,0 +1,35 @@
+syntax = "proto3";
+package quick.find.services.friend;
+
+
+message AddFriendRequest {
+    int32 uid = 1;
+    int32 friendId = 2;
+}
+
+message FriendResponse {
+    bool result = 1;
+}
+
+message FriendJoinUser {
+    int32 friend = 1;
+    string name = 2;
+}
+
+message ListRequest{
+    int32 uid=1;
+}
+
+message ListResponse {
+    int32 uid = 1;
+    repeated FriendJoinUser list = 2;
+}
+
+
+service FriendServices {
+    rpc AddFriend (AddFriendRequest) returns (FriendResponse);
+    rpc List(ListRequest)returns(ListResponse);
+}
+
+
+

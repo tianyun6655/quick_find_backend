@@ -1,0 +1,91 @@
+info:
+  contact: {}
+  license: {}
+paths:
+  /quick_find/friend/add:
+    post:
+      parameters:
+      - description: the user id
+        in: query
+        name: uid
+        required: true
+        type: string
+      - description: want to add
+        in: query
+        name: friend_id
+        required: true
+        type: integer
+      responses:
+        "800":
+          schema:
+            type: params
+        "1000":
+          schema:
+            type: system
+      summary: Add
+      tags:
+      - Friend Service
+  /quick_find/friend/list:
+    post:
+      parameters:
+      - description: the user id
+        in: query
+        name: uid
+        required: true
+        type: string
+      responses:
+        "800":
+          schema:
+            type: params
+        "1000":
+          schema:
+            type: system
+      summary: List
+      tags:
+      - Friend Service
+  /quick_find/user/login:
+    post:
+      parameters:
+      - description: phone number
+        in: query
+        name: phone
+        required: true
+        type: string
+      - description: phone code
+        in: query
+        name: code
+        required: true
+        type: integer
+      responses:
+        "800":
+          schema:
+            type: params
+        "1000":
+          schema:
+            type: system
+      summary: Login
+      tags:
+      - User Service
+  /quick_find/user/register:
+    post:
+      parameters:
+      - description: phone number
+        in: query
+        name: phone
+        required: true
+        type: string
+      - description: phone code
+        in: query
+        name: code
+        required: true
+        type: integer
+      responses:
+        "800":
+          schema:
+            type: params
+        "1000":
+          schema:
+            type: system
+      summary: Register
+      tags:
+      - User Service

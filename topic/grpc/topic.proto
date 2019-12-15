@@ -1,0 +1,50 @@
+syntax = "proto3";
+package quick.find.services.topic;
+
+
+message Publish {
+    string title = 1;
+    int32 uid = 2;
+    string content = 3;
+}
+message Comment{
+    string userName=1;
+    string content=2;
+}
+
+message ListRequest {
+    int32 page=1;
+    int32 count=2;
+}
+
+
+message Topic {
+    string title = 1;
+    int32 uid = 2;
+    string content = 3;
+    int32  like=4;
+    repeated Comment comment=5;
+}
+
+message TopinJoinName {
+    string title = 1;
+    int32 uid = 2;
+    string content = 3;
+    int32  like=4;
+    string name=5;
+}
+
+message TopicList {
+    repeated TopinJoinName list=5;
+}
+
+message PushResponse{
+    bool  result=1;
+}
+
+service TopicServices {
+   rpc  Push(Publish)returns(PushResponse);
+   rpc  List(ListRequest)returns(TopicList);
+}
+
+

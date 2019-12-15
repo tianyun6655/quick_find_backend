@@ -1,0 +1,145 @@
+{
+    "info": {
+        "contact": {},
+        "license": {}
+    },
+    "paths": {
+        "/quick_find/friend/add": {
+            "post": {
+                "tags": [
+                    "Friend Service"
+                ],
+                "summary": "Add",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the user id",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "want to add",
+                        "name": "friend_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "1000": {
+                        "schema": {
+                            "type": "system"
+                        }
+                    },
+                    "800": {
+                        "schema": {
+                            "type": "params"
+                        }
+                    }
+                }
+            }
+        },
+        "/quick_find/friend/list": {
+            "post": {
+                "tags": [
+                    "Friend Service"
+                ],
+                "summary": "List",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "the user id",
+                        "name": "uid",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "1000": {
+                        "schema": {
+                            "type": "system"
+                        }
+                    },
+                    "800": {
+                        "schema": {
+                            "type": "params"
+                        }
+                    }
+                }
+            }
+        },
+        "/quick_find/user/login": {
+            "post": {
+                "tags": [
+                    "User Service"
+                ],
+                "summary": "Login",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "phone number",
+                        "name": "phone",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "phone code",
+                        "name": "code",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "1000": {
+                        "schema": {
+                            "type": "system"
+                        }
+                    },
+                    "800": {
+                        "schema": {
+                            "type": "params"
+                        }
+                    }
+                }
+            }
+        },
+        "/quick_find/user/register": {
+            "post": {
+                "tags": [
+                    "User Service"
+                ],
+                "summary": "Register",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "phone number",
+                        "name": "phone",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "phone code",
+                        "name": "code",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "1000": {
+                        "schema": {
+                            "type": "system"
+                        }
+                    },
+                    "800": {
+                        "schema": {
+                            "type": "params"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

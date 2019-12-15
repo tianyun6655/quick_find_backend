@@ -1,0 +1,11 @@
+[mysql]
+  password="Arvin6655!"
+  userName="root"
+  address="127.0.0.1:3306"
+  maxIde=1024
+  maxOpen=1024
+  dBName="quick_find"
+[redis]
+  address="127.0.0.1:6379"
+  poolSize=1024
+  dB=0

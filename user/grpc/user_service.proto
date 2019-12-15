@@ -1,0 +1,40 @@
+syntax = "proto3";
+package quick.find.services.user;
+
+message LoginRequest {
+    string phone = 1;
+    int32 code =2;
+}
+
+message User{
+    int32 uid=1;
+    string userName=2;
+    int32 age =3;
+    int32 sex=4;
+    string  token=5;
+}
+
+message RegisterRequest{
+    string phone =1;
+    int32  code=2;
+}
+
+message UpdateResponse{
+    bool result=1;
+}
+
+message AddFriendRequest{
+    int32 uid =1;
+    int32 friendId =2;
+}
+
+message AddFriendResponse{
+    bool result=1;
+}
+
+service UserServices {
+    rpc Login (LoginRequest) returns (User);
+    rpc Register(RegisterRequest)returns(User);
+    rpc Update(User)returns(UpdateResponse);
+    rpc AddFriend(AddFriendRequest)returns(AddFriendResponse);
+}

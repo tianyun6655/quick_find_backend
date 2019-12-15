@@ -1,0 +1,27 @@
+syntax = "proto3";
+package quick.find.services.im;
+
+
+message SendMessageRequest{
+    int32 from =1;
+    int32 to=2;
+    string message =3;
+}
+
+message TranslateRequest{
+    string text=1;
+}
+
+message TranslateResponse{
+    string text=2;
+}
+
+message SendMessageResponse{
+    bool result=1;
+}
+
+service IMServices {
+    rpc SendMessage (SendMessageRequest) returns (SendMessageResponse);
+    rpc Translate (TranslateRequest) returns (TranslateResponse);
+
+}
